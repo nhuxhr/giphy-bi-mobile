@@ -12,3 +12,13 @@ web-build/
 
 # macOS
 .DS_Store
+
+# ENV files
+.env
+.env.*
+!.env.example*
+
+# Tests
+/coverage
+/.nyc_output
+*.snap
