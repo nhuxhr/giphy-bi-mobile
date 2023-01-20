@@ -1,0 +1,20 @@
+name: 🧪 Run linters and tests
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  mobile:
+    name: ✅ Run code checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest server code
+        uses: actions/checkout@v3
+
+      - name: 📦 Install dependencies
+        run: yarn ci --ignore-scripts
+
+      - name: 🧪 Run tests
+        run: yarn test:cov --updateSnapshot --passWithNoTests
